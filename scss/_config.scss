@@ -1,0 +1,33 @@
+$primary-color: #444;
+$secondary-color: #FFA500 ;
+$show-home-image: true;
+$home-image: url("../image/bg.jpeg");
+$background-opacity: 0.9;
+
+@mixin easeOut{
+    transition: all 0.7s ease-out;
+}
+
+@mixin background{
+    @if $show-home-image{
+        &#bg-img{
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+        
+            
+            &:after{ //The overlay class was converted to a pseudo element :after
+                //The pseudo element 'after' is not an actual html element, but the css treats as an actual element thas after-
+                //- bg-img element
+                content:'';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: rgba($primary-color, $background-opacity);
+            }
+        }
+    }
+}

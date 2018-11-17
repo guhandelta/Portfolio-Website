@@ -38,3 +38,97 @@
 
     }
 }
+
+//Menu Overlay
+.menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden;
+
+    //when the button is clicked, the show class is added to the elements
+    &.show{
+        visibility: visible;
+    }
+    //The styling for both the boxes are done here
+    &-branding, 
+    &-nav{//THis means, what ever the main class's name is(the class within which this is nested), a -branding will be-
+        //-added/appended to it
+        display: flex;//flex will make the menus into columns => which will align the menu items vertically insead of horizontally
+        //To make it into a column
+        flex-flow: column wrap;
+        align-items: center;//Align items to center
+        justify-content: center;
+        float: left;
+        width: 50%;//Size of eax boxes in the flexbox, 50% will make it into 2 boxes    
+        height: 100vh;//Will take the entire screen/display/viewport
+        overflow: hidden;//To prevent any scrollbars from being displayed
+    }
+    //The individual details for each boxes/panels are done here
+    &-nav{
+        margin: 0;
+        padding: 0;
+        background: darken($primary-color, 5);
+        list-style: none;
+        transform: translate3d(0, -100%, 0);//+ve will push the box/panel from bottom and -ve 100 will push it from top
+        @include easeOut;//transition effect
+
+        &.show{//when the show class is applid to the nav
+            //slide in from top
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    //Branding Panel
+    &-branding{
+        background: $primary-color;
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
+    
+        &.show{//when the show class is applid to the nav
+            //slide in from bottom
+            transform: translate3d(0, 0, 0);
+        }
+        .portrait{
+            width: 250px;
+            height: 250px;
+            background: url('../image/ppsm.jpg');
+            border-radius: 50%;
+            border: solid 3px $secondary-color;
+        }
+    }
+
+    .nav-item{
+        transform: translate3d(600px, 0, 0);
+        @include easeOut;
+
+        &.show{
+            //Slide from right
+            transform: translate3d(0, 0, 0);
+        }
+        &.current > a{
+            color: $secondary-color;
+        }
+    }
+    .nav-link{
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 1rem 0;//0 on left and right
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        @include easeOut;
+
+        &:hover{
+            color: $secondary-color;
+        }
+    }
+}
+//Delay each nav-item slide in time by 0.1s 
+@for $x from 1 through 4{
+    .nav-item:nth-child(#{$x}){
+        transition-delay: $x * 0.1s; 
+    }
+}

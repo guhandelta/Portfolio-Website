@@ -29,7 +29,6 @@ function toggleMenu() {
 
     } else {
         //If the  menu button is clicked, when the menu is open, the menu should be hiddend(i.e.)the classes should be removed
-
         menuBtn.classList.remove('close');//The menu button gets hidden, when the menu button is clicked
         menu.classList.remove('show');
         menuNav.classList.remove('show');
@@ -37,13 +36,6 @@ function toggleMenu() {
         navItems.forEach(item => item.classList.remove('show'));
         //reset menu state
         showMenu = false;
-        // menuBtn.classList.add('show');//The menu button gets hidden, when the menu button is clicked
-        // menu.classList.add('close');
-        // menuNav.classList.add('close');
-        // menuBranding.classList.add('close');
-        // navItems.forEach(item => item.classList.add('close'));
-        // //reset menu state
-        // showMenu = false;
 
     }
 }

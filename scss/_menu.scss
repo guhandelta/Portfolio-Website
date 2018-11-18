@@ -109,7 +109,7 @@
         &.current > a{
             color: $secondary-color;
         }
-    }
+     }
     .nav-link{
         display: inline-block;
         position: relative;
@@ -128,7 +128,7 @@
 }
 //Delay each nav-item slide in time by 0.1s 
 @for $x from 1 through 4{
-    .nav-item:nth-child(#{$x}){
+    .nav-item:nth-child(#{$x}){ // #{$x} => is quite like a template literal in JS ES6
         transition-delay: $x * 0.1s; 
     }
 }

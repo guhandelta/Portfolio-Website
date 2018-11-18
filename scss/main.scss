@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 *{
     box-sizing: border-box
@@ -27,8 +28,11 @@ h3{
     &.sm-heading{
         font-size: 2rem; 
         padding: 0.2rem 1rem;
-        //margin-block-start: 25px;
+        // height: 7px;
+        // width: 50px;
+        // padding-bottom: 10px;
         background: rgba(lighten($primary-color, 2), 0.5);
+        -webkit-border-radius:  7px;
     }
 }
 
@@ -51,10 +55,10 @@ main{
     
     .icons{
         margin-top: 1rem;
+        padding-top: 30px;
 
         a{
-            padding: 0.4rem;
-
+            padding: 0.4rem;  
             &:hover{
                 color: $secondary-color;
                 @include easeOut(); 

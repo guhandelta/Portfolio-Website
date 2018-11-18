@@ -33,3 +33,36 @@ $background-opacity: 0.9;
         
     }
 }
+
+//Media Query Mixins
+@mixin mediaSm {
+    @media screen and (max-width:500px){
+//This means that, any css given in this block will only apply if the screen is-
+//- 500px(the dimension specified in the media query) or less
+    @content; //==> Makes this mixin available to be used with other files 
+    //No CSS content will be added here. Anyother content added into this mixin may be added using the mixin name
+    //- which will automatically put in here, through the content
+    }
+}
+
+@mixin mediaSm{
+    @media screen and (max-width:500px){
+        @content;
+    }
+}
+
+@mixin mediaMd{
+    @media screen and (max-width:768px){
+        @content;
+    }
+}
+@mixin mediaLg{
+    @media screen and (min-width:769px) and (max-width:1170px){
+        @content;
+    }
+}
+@mixin mediaXl{
+    @media screen and (min-width:1171px){
+        @content;
+    }
+}

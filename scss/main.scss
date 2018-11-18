@@ -1,6 +1,5 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
 
 *{
     box-sizing: border-box
@@ -9,7 +8,7 @@
 body{
     @include background();
     background: $primary-color;
-    color: white;
+    color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -51,7 +50,9 @@ header{
 }
 main{
     padding: 4rem;
-    height: 100%;
+    //height: 100%;
+    min-height: calc(100vh-60px);//the entire view port height - height of the footer
+    //This is to make the footer sticky and stay at the bottom, at any case even if the element above it is removed
     
     .icons{
         margin-top: 1rem;
@@ -73,3 +74,61 @@ main{
         }
     }
 }
+
+.about-info{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 
+    'bioimage bio bio'//The spacinf alloated for the html elememts 1 frame for image and 2 for bio
+    'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image{
+    //background: url("../image/ppsm.jpg");
+    //grid-area: bio-image;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+    }
+    .bio{
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+    .job1{
+        grid-area: job-1;
+    }
+    .job2{
+        grid-area: job-2;
+    }
+    .job3{
+        grid-area: job-3;
+    }
+    
+    .job{
+        background: lighten($primary-color,5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color solid 5px;
+    }
+    .empl{
+        background: lighten($primary-color, 4);
+        color: #fff;
+        padding: 1rem;
+        margin: 0;
+
+    }
+    .pos{
+        background: lighten($primary-color,7);
+        padding: 3px;
+        border-bottom: lighten(#B6D8FE,5);
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+}
+#main-footer{
+    text-align: center;
+    padding: 1rem; 
+    background:darken($primary-color, 10); 
+    color: set-text-color($primary-color);
+}
+
+@import 'mobile';//This is to make the media queries to be executed after all the css has been executed

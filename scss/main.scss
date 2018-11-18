@@ -48,6 +48,9 @@ header{
 .text-secondary{
     color: $secondary-color;
 }
+#contact{
+    min-height: calc(100vh-60px);
+}
 main{
     padding: 4rem;
     //height: 100%;
@@ -138,6 +141,36 @@ main{
             opacity: 0.5;
             border-color: $secondary-color;
             @include easeOut;
+        }
+    }
+}
+//Contact Page
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div{
+        font-size: 2rem;
+        border: 3px white solid;
+        padding: 0.7rem 1rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+         -webkit-border-radius: 7px;
+        // -moz-webkit: border radius 7;
+        // -ms-webkit: border radius 7;
+        // -o-webkit: border radius 7;
+        //webkit: border radius 7px
+
+        &:hover{
+            padding: 0.5rem 1.5rem;
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+            span{
+                color: set-text-color($secondary-color);
+            }
         }
     }
 }

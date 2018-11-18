@@ -255,6 +255,29 @@ main {
   background: #2b2b2b;
   color: #fff; }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible; }
+
 @media screen and (min-width: 1171px) {
   .projects {
     grid-template-columns: repeat(4, 1fr); } }
@@ -286,7 +309,7 @@ main {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url(".../image/ppsm.jpg");
+      background: url(".../image/ppsmn.jpg");
       width: 150px;
       height: 150px; }
   .about-info {

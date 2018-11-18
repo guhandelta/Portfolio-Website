@@ -55,7 +55,10 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../image/ppsmn.jpg");
+      background-image: url("../image/ppsmn.jpg");
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center;
       border-radius: 50%;
       border: solid 3px #FFA500; }
   .menu .nav-item {
@@ -122,11 +125,11 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem; }
+    font-size: 6vw; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
-    font-size: 2rem;
+    font-size: 2vw;
     padding: 0.2rem 1rem;
     background: rgba(73, 73, 73, 0.5);
     -webkit-border-radius: 7px; }
@@ -168,6 +171,7 @@ main {
   grid-template-areas: "bioimage bio bio" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
+    background: url("../image/ppsmn.jpg");
     margin: auto;
     border-radius: 50%;
     border: #FFA500 3px solid; }

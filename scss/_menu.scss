@@ -92,7 +92,10 @@
         .portrait{
             width: 250px;
             height: 250px;
-            background: url('../image/ppsmn.jpg');
+            background-image: url('../image/ppsmn.jpg');
+            background-repeat: no-repeat;
+            background-size:auto;
+            background-position:center;
             border-radius: 50%;
             border: solid 3px $secondary-color;
         }
